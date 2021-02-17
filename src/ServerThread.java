@@ -47,6 +47,7 @@ public class ServerThread extends Thread {
                     case 2://update chat request
                         System.out.println("update request recieved");
                         synchronized(Server.chat) {
+                            objectOut.reset();
                             System.out.println("sthread chat size " + Server.chat.size());
                             Packet pack = new Packet(3,Server.chat);
                             System.out.println("Packaged just now size : " +((Vector<Message>) pack.getPayload()).size());

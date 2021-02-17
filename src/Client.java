@@ -67,6 +67,8 @@ public class Client {
                     objectOut.flush();
                     //read in chat object
                     Packet serverPack = (Packet) objectIn.readObject();
+                    //objectOut.reset();
+                    //objectIn.drain();
                     if (serverPack.getControl() != 3) {
                         System.out.println("this is fucked");
                         System.exit(1);
