@@ -47,20 +47,20 @@ public class Client {
             System.out.print("\033[H\033[2J");   
             System.out.println(menu);
             System.out.println(chatString); 
-            System.out.println("messages " + localChat.size());
             line = scan.nextLine();
             switch(line) {
                 case "1":
                     System.out.println("Enter your message");
-                    String message = scan.nextLine();
+                    String messageContent = scan.nextLine();
                     //write packet to server
-                    Packet mpack = new Packet(1,new Message(userName,message));
+                    Message message = new Message(userName,messageContent);
+                    localChat.add(message);
+                    Packet mpack = new Packet(1,message);
                     objectOut.writeObject(mpack);
                     objectOut.flush();
                     break;
                 case "2":
                     try {
-                    System.out.println("Reading new chat log");
                     //signal to server request for new chat log
                     Packet upack = new Packet(2);
                     objectOut.writeObject(upack);
@@ -75,14 +75,10 @@ public class Client {
                     }
                     Vector newChat = (Vector<Message>) serverPack.getPayload();
                     localChat = (Vector<Message>) serverPack.getPayload();
-                    System.out.println(newChat.equals(localChat));
                     update = true;
                     } catch (Exception e) {
                         System.out.println("Yo is update getting fucked up?");
                     }
-                    System.out.println("Size of recieved chat " + localChat.size());
-                    System.out.println("debug");
-                    scan.nextLine();
                     break;
                 default:
                     System.out.println("Invalid input");
