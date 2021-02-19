@@ -4,3 +4,4 @@ src/ServerThread.java
 src/Message.java
 src/Packet.java
 src/SerialObject.java
+src/GuiClient.java
