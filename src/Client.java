@@ -13,8 +13,8 @@ public class Client {
       String serverName = args[0];
       int port = Integer.parseInt(args[1]);
       String userName = args[2];
-      //ArrayList<Message> localChat = new ArrayList<Message>();
-      Vector<Message> localChat = new Vector<Message>();
+      ArrayList<Message> localChat = new ArrayList<Message>();
+      //Vector<Message> localChat = new Vector<Message>();
       try {
 
          System.out.println("Connecting to " + serverName + " on port " + port);
@@ -73,8 +73,13 @@ public class Client {
                         System.out.println("this is fucked");
                         System.exit(1);
                     }
-                    Vector newChat = (Vector<Message>) serverPack.getPayload();
-                    localChat = (Vector<Message>) serverPack.getPayload();
+                    //Vector newChat = (Vector<Message>) serverPack.getPayload();
+                    //localChat = (Vector<Message>) serverPack.getPayload();
+
+                    ArrayList<Message> newChat = (ArrayList<Message>) serverPack.getPayload();
+                    localChat = (ArrayList<Message>) serverPack.getPayload();
+
+
                     update = true;
                     } catch (Exception e) {
                         System.out.println("Yo is update getting fucked up?");

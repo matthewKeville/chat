@@ -1,7 +1,12 @@
-src/Client.java
 src/Server.java
 src/ServerThread.java
 src/Message.java
-src/Packet.java
-src/SerialObject.java
 src/GuiClient.java
+src/User.java
+src/ChatRoom.java
+src/BackupThread.java
+src/LoginPanel.java
+src/CreateAccountPanel.java
+src/BrowserPanel.java
+src/ChatPanel.java
+src/State.java

@@ -1,12 +1,10 @@
 import java.io.Serializable;
-public class Message extends SerialObject implements Serializable {
+public class Message implements Serializable {
     private String user;
     private String content;
     private long time;
    
- 
     public Message(String user,String content) {
-        super();
         this.user = user;
         this.content = content;
         this.time = System.currentTimeMillis()/1000;
