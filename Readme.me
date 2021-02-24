@@ -1,7 +1,8 @@
-java GreetingServer 6066
-->start GreetingServer on port 6066
+Launch server
+java -cp bin Server
 
-java GreetingClient localhost 6066
-->start application, try to connect to ip localhost on port 6066
+Launch Graphical Client
+java -cp bin client.GuiClient localhost 6066
 
-*done with java.net and java.io
+Compile classes
+javac -cp bin -d bin/ @targets

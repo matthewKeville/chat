@@ -1,3 +1,7 @@
+import model.User;
+import model.ChatRoom;
+import model.Message;
+
 import java.net.*;
 import java.io.*;
 import java.util.*;
@@ -87,8 +91,8 @@ public class Server {
     //load user and chat maps from file if it exists
     public static void loadData() {
             //do files exist?
-            File userTemp = new File("users.dat");
-            File chatTemp = new File("rooms.dat");
+            File userTemp = new File("res/users.dat");
+            File chatTemp = new File("res/rooms.dat");
 
             //no data has been saved , create empty maps and exit
             if ( !userTemp.exists()  || !chatTemp.exists() ) {
@@ -104,7 +108,7 @@ public class Server {
             } else {
                     try {
                         //write rooms
-                        FileInputStream fis = new FileInputStream(new File("rooms.dat"));
+                        FileInputStream fis = new FileInputStream(new File("res/rooms.dat"));
                         ObjectInputStream ois = new ObjectInputStream(fis);
                         try {
                             rooms = (HashMap<String,ChatRoom>) ois.readObject(); 
@@ -118,7 +122,7 @@ public class Server {
                         fis.close(); 
                     
                         //write users
-                        fis = new FileInputStream(new File("users.dat"));
+                        fis = new FileInputStream(new File("res/users.dat"));
                         ois = new ObjectInputStream(fis);
                         try {
                             users = (HashMap<String,User>) ois.readObject();

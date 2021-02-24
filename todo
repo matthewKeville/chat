@@ -1,3 +1,25 @@
-add updateTimer for serverBrowser panel ... 
+In Gui Client the initial delay for rooms is too long
+    it should load immediately on initial transition.
 
-cli is vastly outdated
+>Gui controls for Chat Room creation
+
+>Gui controls for Chat Room moderation
+
+>?Friends List ... 
+
+>Latency in ms?
+
+>cipher streams
+
+>chat filters
+
+>tighten UI
+
+>Implement password field privacy *******
+
+>change message structure to take in userID and userName
+
+>implement muting (peers)
+
+>create separate thread for handling incoming client connections
+    to decouple from server update

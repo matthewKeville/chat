@@ -1,3 +1,6 @@
+package client;
+import model.Message;
+
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;

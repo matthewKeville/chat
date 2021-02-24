@@ -1,0 +1,16 @@
+Server.java 
+ServerThread.java
+BackupThread.java
+Test.java
+
+Model/Message.java
+Model/User.java
+Model/ChatRoom.java
+
+Client/GuiClient.java
+Client/LoginPanel.java
+Client/CreateAccountPanel.java
+Client/BrowserPanel.java
+Client/ChatPanel.java
+Client/State.java
+

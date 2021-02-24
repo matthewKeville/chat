@@ -1,3 +1,7 @@
+import model.User;
+import model.Message;
+import model.ChatRoom;
+
 import java.net.*;
 import java.io.*;
 import java.util.*;

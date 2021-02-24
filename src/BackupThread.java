@@ -26,14 +26,14 @@ public class BackupThread extends Thread {
    public static void saveData() {
         try {
             //write rooms
-            FileOutputStream fos = new FileOutputStream(new File("rooms.dat"));
+            FileOutputStream fos = new FileOutputStream(new File("res/rooms.dat"));
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(Server.rooms); 
             oos.close();
             fos.close(); 
     
             //write users
-            fos = new FileOutputStream(new File("users.dat"));
+            fos = new FileOutputStream(new File("res/users.dat"));
             oos = new ObjectOutputStream(fos);
             oos.writeObject(Server.users);
             oos.close();

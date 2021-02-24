@@ -1,3 +1,4 @@
+package client;
 import java.net.*;
 import java.io.*;
 import java.util.*;
@@ -13,7 +14,7 @@ public class Client {
       String serverName = args[0];
       int port = Integer.parseInt(args[1]);
       String userName = args[2];
-      ArrayList<Message> localChat = new ArrayList<Message>();
+      //ArrayList<Message> localChat = new ArrayList<Message>();
       //Vector<Message> localChat = new Vector<Message>();
       try {
 
@@ -40,9 +41,9 @@ public class Client {
 
             String menu = "[1] Enter a message\n[2] Refresh chat";
             chatString = ""; 
-            for (Message m : localChat) {
-               chatString+=m.toString()+"\n";
-            }
+            //for (Message m : localChat) {
+            //   chatString+=m.toString()+"\n";
+            //}
             //clear screen
             System.out.print("\033[H\033[2J");   
             System.out.println(menu);
@@ -53,7 +54,7 @@ public class Client {
                     System.out.println("Enter your message");
                     String messageContent = scan.nextLine();
                     //write packet to server
-                    Message message = new Message(userName,messageContent);
+                    //Message message = new Message(userName,messageContent);
                     localChat.add(message);
                     Packet mpack = new Packet(1,message);
                     objectOut.writeObject(mpack);
@@ -76,8 +77,8 @@ public class Client {
                     //Vector newChat = (Vector<Message>) serverPack.getPayload();
                     //localChat = (Vector<Message>) serverPack.getPayload();
 
-                    ArrayList<Message> newChat = (ArrayList<Message>) serverPack.getPayload();
-                    localChat = (ArrayList<Message>) serverPack.getPayload();
+                    //ArrayList<Message> newChat = (ArrayList<Message>) serverPack.getPayload();
+                    //localChat = (ArrayList<Message>) serverPack.getPayload();
 
 
                     update = true;
